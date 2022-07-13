@@ -1,0 +1,2 @@
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"phone": "18688383818","context":"【博罗政务】您有一份新的公文"}' http://localhost:8899/sendMsg
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"phone": "18688383818","context":"【博罗政务】您有一份新的公文 公文标题：关于提请审议博罗县推荐广东省出席党的二十大代表候选人推荐人选的请示 发送者：谢远区 (县委办OA)  市领导批示件—印发《市十二届人大常委会第四十五次会议关于2020年度市本级预算执行和其他财政(横河镇政府OA)"}' http://localhost:8899/sendMsg

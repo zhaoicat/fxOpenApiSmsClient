@@ -1,0 +1,8 @@
+server:
+    port: 8899
+
+openApi:
+    appKey: 702f93a62cb2416888197956aee6577e
+    appSecret: 8d1818c05960434293560742e52923b4
+    entityId: 922001
+    sendSmsUrl: http://127.0.0.1:8083/openApi/v1/sendMsg
