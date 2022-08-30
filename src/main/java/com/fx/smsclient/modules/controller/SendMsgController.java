@@ -1,6 +1,7 @@
 package com.fx.smsclient.modules.controller;
 
 
+import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.fx.smsclient.modules.service.SendMsgService;
 import com.fx.smsclient.util.FxPushCheckSum;
@@ -29,10 +30,11 @@ public class SendMsgController  {
     Object sendMsg(@RequestBody HashMap paraMap) throws Exception {
         String phone = (String)paraMap.get("phone");
         String context =(String) paraMap.get("context");
-        String ret =sendMsgService.sendMsg(phone,context);
+        String byPass =(String) paraMap.get("byPass");
+        String ret =sendMsgService.sendMsg(phone,context,byPass);
         log.info(ret);
-        HashMap map = JSONUtil.toBean(ret, HashMap.class);
-        return SuccessResponseData.success(map);
+        JSONObject jsonObject = JSONUtil.parseObj(ret);
+        return jsonObject;
     }
 
     @PostMapping(value = "/callback",produces= MediaType.APPLICATION_JSON_VALUE)
